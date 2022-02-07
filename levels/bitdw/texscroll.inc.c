@@ -162,7 +162,7 @@ void scroll_bitdw_dl_Cube_032_mesh_layer_1_vtx_0() {
 	int deltaY;
 	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_032_mesh_layer_1_vtx_0);
 
-	deltaY = (int)(1.0 * 0x20) % height;
+	deltaY = (int)(-1.0 * 0x20) % height;
 
 	if (absi(currentY) > height) {
 		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
@@ -176,7 +176,7 @@ void scroll_bitdw_dl_Cube_032_mesh_layer_1_vtx_0() {
 
 void scroll_bitdw_dl_Cube_035_mesh_layer_1_vtx_0() {
 	int i = 0;
-	int count = 70;
+	int count = 92;
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
@@ -198,7 +198,7 @@ void scroll_bitdw_dl_Cube_035_mesh_layer_1_vtx_0() {
 
 void scroll_bitdw_dl_Cube_036_mesh_layer_1_vtx_0() {
 	int i = 0;
-	int count = 70;
+	int count = 92;
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
@@ -206,29 +206,7 @@ void scroll_bitdw_dl_Cube_036_mesh_layer_1_vtx_0() {
 	int deltaY;
 	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_036_mesh_layer_1_vtx_0);
 
-	deltaY = (int)(-1.0 * 0x20) % height;
-
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
-	}
-
-	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
-	}
-	currentY += deltaY;
-}
-
-void scroll_bitdw_dl_Cube_037_mesh_layer_1_vtx_0() {
-	int i = 0;
-	int count = 70;
-	int width = 64 * 0x20;
-	int height = 64 * 0x20;
-
-	static int currentY = 0;
-	int deltaY;
-	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_037_mesh_layer_1_vtx_0);
-
-	deltaY = (int)(-1.0 * 0x20) % height;
+	deltaY = (int)(1.0 * 0x20) % height;
 
 	if (absi(currentY) > height) {
 		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
@@ -242,7 +220,7 @@ void scroll_bitdw_dl_Cube_037_mesh_layer_1_vtx_0() {
 
 void scroll_bitdw_dl_Cube_038_mesh_layer_1_vtx_0() {
 	int i = 0;
-	int count = 70;
+	int count = 92;
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
@@ -250,95 +228,7 @@ void scroll_bitdw_dl_Cube_038_mesh_layer_1_vtx_0() {
 	int deltaY;
 	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_038_mesh_layer_1_vtx_0);
 
-	deltaY = (int)(1.0 * 0x20) % height;
-
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
-	}
-
-	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
-	}
-	currentY += deltaY;
-}
-
-void scroll_bitdw_dl_Cube_039_mesh_layer_1_vtx_0() {
-	int i = 0;
-	int count = 70;
-	int width = 64 * 0x20;
-	int height = 64 * 0x20;
-
-	static int currentY = 0;
-	int deltaY;
-	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_039_mesh_layer_1_vtx_0);
-
 	deltaY = (int)(-1.0 * 0x20) % height;
-
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
-	}
-
-	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
-	}
-	currentY += deltaY;
-}
-
-void scroll_bitdw_dl_Cube_040_mesh_layer_1_vtx_0() {
-	int i = 0;
-	int count = 70;
-	int width = 64 * 0x20;
-	int height = 64 * 0x20;
-
-	static int currentY = 0;
-	int deltaY;
-	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_040_mesh_layer_1_vtx_0);
-
-	deltaY = (int)(1.0 * 0x20) % height;
-
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
-	}
-
-	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
-	}
-	currentY += deltaY;
-}
-
-void scroll_bitdw_dl_Cube_041_mesh_layer_1_vtx_0() {
-	int i = 0;
-	int count = 70;
-	int width = 64 * 0x20;
-	int height = 64 * 0x20;
-
-	static int currentY = 0;
-	int deltaY;
-	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_041_mesh_layer_1_vtx_0);
-
-	deltaY = (int)(-1.0 * 0x20) % height;
-
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
-	}
-
-	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
-	}
-	currentY += deltaY;
-}
-
-void scroll_bitdw_dl_Cube_042_mesh_layer_1_vtx_0() {
-	int i = 0;
-	int count = 70;
-	int width = 64 * 0x20;
-	int height = 64 * 0x20;
-
-	static int currentY = 0;
-	int deltaY;
-	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_042_mesh_layer_1_vtx_0);
-
-	deltaY = (int)(1.0 * 0x20) % height;
 
 	if (absi(currentY) > height) {
 		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
@@ -360,7 +250,29 @@ void scroll_bitdw_dl_Cube_054_mesh_layer_1_vtx_0() {
 	int deltaY;
 	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_054_mesh_layer_1_vtx_0);
 
-	deltaY = (int)(1.0 * 0x20) % height;
+	deltaY = (int)(-1.0 * 0x20) % height;
+
+	if (absi(currentY) > height) {
+		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
+	}
+
+	for (i = 0; i < count; i++) {
+		vertices[i].n.tc[1] += deltaY;
+	}
+	currentY += deltaY;
+}
+
+void scroll_bitdw_dl_Cube_071_mesh_layer_1_vtx_0() {
+	int i = 0;
+	int count = 92;
+	int width = 64 * 0x20;
+	int height = 64 * 0x20;
+
+	static int currentY = 0;
+	int deltaY;
+	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_071_mesh_layer_1_vtx_0);
+
+	deltaY = (int)(-1.0 * 0x20) % height;
 
 	if (absi(currentY) > height) {
 		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
@@ -401,15 +313,15 @@ void scroll_bitdw_dl_Cube_072_mesh_layer_5_vtx_0() {
 	currentX += deltaX;	currentY += deltaY;
 }
 
-void scroll_bitdw_dl_Sphere_mesh_layer_1_vtx_1() {
+void scroll_bitdw_dl_Cube_074_mesh_layer_1_vtx_0() {
 	int i = 0;
-	int count = 6;
+	int count = 92;
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
 	static int currentY = 0;
 	int deltaY;
-	Vtx *vertices = segmented_to_virtual(bitdw_dl_Sphere_mesh_layer_1_vtx_1);
+	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_074_mesh_layer_1_vtx_0);
 
 	deltaY = (int)(1.0 * 0x20) % height;
 
@@ -421,6 +333,98 @@ void scroll_bitdw_dl_Sphere_mesh_layer_1_vtx_1() {
 		vertices[i].n.tc[1] += deltaY;
 	}
 	currentY += deltaY;
+}
+
+void scroll_bitdw_dl_Cube_076_mesh_layer_1_vtx_0() {
+	int i = 0;
+	int count = 92;
+	int width = 64 * 0x20;
+	int height = 64 * 0x20;
+
+	static int currentY = 0;
+	int deltaY;
+	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_076_mesh_layer_1_vtx_0);
+
+	deltaY = (int)(-1.0 * 0x20) % height;
+
+	if (absi(currentY) > height) {
+		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
+	}
+
+	for (i = 0; i < count; i++) {
+		vertices[i].n.tc[1] += deltaY;
+	}
+	currentY += deltaY;
+}
+
+void scroll_bitdw_dl_Cube_079_mesh_layer_1_vtx_0() {
+	int i = 0;
+	int count = 92;
+	int width = 64 * 0x20;
+	int height = 64 * 0x20;
+
+	static int currentY = 0;
+	int deltaY;
+	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_079_mesh_layer_1_vtx_0);
+
+	deltaY = (int)(1.0 * 0x20) % height;
+
+	if (absi(currentY) > height) {
+		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
+	}
+
+	for (i = 0; i < count; i++) {
+		vertices[i].n.tc[1] += deltaY;
+	}
+	currentY += deltaY;
+}
+
+void scroll_bitdw_dl_Cube_081_mesh_layer_1_vtx_0() {
+	int i = 0;
+	int count = 92;
+	int width = 64 * 0x20;
+	int height = 64 * 0x20;
+
+	static int currentY = 0;
+	int deltaY;
+	Vtx *vertices = segmented_to_virtual(bitdw_dl_Cube_081_mesh_layer_1_vtx_0);
+
+	deltaY = (int)(-1.0 * 0x20) % height;
+
+	if (absi(currentY) > height) {
+		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
+	}
+
+	for (i = 0; i < count; i++) {
+		vertices[i].n.tc[1] += deltaY;
+	}
+	currentY += deltaY;
+}
+
+void scroll_bitdw_dl_Sphere_mesh_layer_1_vtx_2() {
+	int i = 0;
+	int count = 15;
+	int width = 64 * 0x20;
+	int height = 64 * 0x20;
+
+	static int currentX = 0;
+	int deltaX;
+	static int timeX;
+	float amplitudeX = 0.10000002384185791;
+	float frequencyX = 0.49000000953674316;
+	float offsetX = 0.0;
+	Vtx *vertices = segmented_to_virtual(bitdw_dl_Sphere_mesh_layer_1_vtx_2);
+
+	deltaX = (int)(amplitudeX * frequencyX * coss((frequencyX * timeX + offsetX) * (1024 * 16 - 1) / 6.28318530718) * 0x20);
+
+	if (absi(currentX) > width) {
+		deltaX -= (int)(absi(currentX) / width) * width * signum_positive(deltaX);
+	}
+
+	for (i = 0; i < count; i++) {
+		vertices[i].n.tc[0] += deltaX;
+	}
+	currentX += deltaX;	timeX += 1;
 }
 
 void scroll_bitdw_dl_Sphere_002_mesh_layer_1_vtx_1() {
@@ -429,20 +433,24 @@ void scroll_bitdw_dl_Sphere_002_mesh_layer_1_vtx_1() {
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
-	static int currentY = 0;
-	int deltaY;
+	static int currentX = 0;
+	int deltaX;
+	static int timeX;
+	float amplitudeX = 0.10000002384185791;
+	float frequencyX = 0.49000000953674316;
+	float offsetX = 0.0;
 	Vtx *vertices = segmented_to_virtual(bitdw_dl_Sphere_002_mesh_layer_1_vtx_1);
 
-	deltaY = (int)(1.0 * 0x20) % height;
+	deltaX = (int)(amplitudeX * frequencyX * coss((frequencyX * timeX + offsetX) * (1024 * 16 - 1) / 6.28318530718) * 0x20);
 
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
+	if (absi(currentX) > width) {
+		deltaX -= (int)(absi(currentX) / width) * width * signum_positive(deltaX);
 	}
 
 	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
+		vertices[i].n.tc[0] += deltaX;
 	}
-	currentY += deltaY;
+	currentX += deltaX;	timeX += 1;
 }
 
 void scroll_bitdw_dl_Sphere_003_mesh_layer_1_vtx_1() {
@@ -451,20 +459,24 @@ void scroll_bitdw_dl_Sphere_003_mesh_layer_1_vtx_1() {
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
-	static int currentY = 0;
-	int deltaY;
+	static int currentX = 0;
+	int deltaX;
+	static int timeX;
+	float amplitudeX = 0.10000002384185791;
+	float frequencyX = 0.49000000953674316;
+	float offsetX = 0.0;
 	Vtx *vertices = segmented_to_virtual(bitdw_dl_Sphere_003_mesh_layer_1_vtx_1);
 
-	deltaY = (int)(1.0 * 0x20) % height;
+	deltaX = (int)(amplitudeX * frequencyX * coss((frequencyX * timeX + offsetX) * (1024 * 16 - 1) / 6.28318530718) * 0x20);
 
-	if (absi(currentY) > height) {
-		deltaY -= (int)(absi(currentY) / height) * height * signum_positive(deltaY);
+	if (absi(currentX) > width) {
+		deltaX -= (int)(absi(currentX) / width) * width * signum_positive(deltaX);
 	}
 
 	for (i = 0; i < count; i++) {
-		vertices[i].n.tc[1] += deltaY;
+		vertices[i].n.tc[0] += deltaX;
 	}
-	currentY += deltaY;
+	currentX += deltaX;	timeX += 1;
 }
 
 void scroll_bitdw() {
@@ -478,15 +490,15 @@ void scroll_bitdw() {
 	scroll_bitdw_dl_Cube_032_mesh_layer_1_vtx_0();
 	scroll_bitdw_dl_Cube_035_mesh_layer_1_vtx_0();
 	scroll_bitdw_dl_Cube_036_mesh_layer_1_vtx_0();
-	scroll_bitdw_dl_Cube_037_mesh_layer_1_vtx_0();
 	scroll_bitdw_dl_Cube_038_mesh_layer_1_vtx_0();
-	scroll_bitdw_dl_Cube_039_mesh_layer_1_vtx_0();
-	scroll_bitdw_dl_Cube_040_mesh_layer_1_vtx_0();
-	scroll_bitdw_dl_Cube_041_mesh_layer_1_vtx_0();
-	scroll_bitdw_dl_Cube_042_mesh_layer_1_vtx_0();
 	scroll_bitdw_dl_Cube_054_mesh_layer_1_vtx_0();
+	scroll_bitdw_dl_Cube_071_mesh_layer_1_vtx_0();
 	scroll_bitdw_dl_Cube_072_mesh_layer_5_vtx_0();
-	scroll_bitdw_dl_Sphere_mesh_layer_1_vtx_1();
+	scroll_bitdw_dl_Cube_074_mesh_layer_1_vtx_0();
+	scroll_bitdw_dl_Cube_076_mesh_layer_1_vtx_0();
+	scroll_bitdw_dl_Cube_079_mesh_layer_1_vtx_0();
+	scroll_bitdw_dl_Cube_081_mesh_layer_1_vtx_0();
+	scroll_bitdw_dl_Sphere_mesh_layer_1_vtx_2();
 	scroll_bitdw_dl_Sphere_002_mesh_layer_1_vtx_1();
 	scroll_bitdw_dl_Sphere_003_mesh_layer_1_vtx_1();
 }
