@@ -55,7 +55,7 @@ s32 check_common_idle_cancels(struct MarioState *m) {
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
         
-        m->arrowTimer = 15;
+        m->arrowTimer = 12;
     }
 
     //kinda lazy, but gonna put our arrow cooldown counter here. Decrement by 1 each time. It works DONT QUESTION IT

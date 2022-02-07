@@ -490,7 +490,7 @@ s32 check_ground_dive_or_punch(struct MarioState *m) {
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
 
-        m->arrowTimer = 15;
+        m->arrowTimer = 12;
     }
     if (m->arrowTimer > 0) {
         m->arrowTimer = m->arrowTimer - 1;
@@ -1046,7 +1046,7 @@ s32 act_braking(struct MarioState *m) {
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
-                    m->arrowTimer = 15;
+                    m->arrowTimer = 12;
 
     }
     if (m->arrowTimer > 0) {
@@ -1464,7 +1464,7 @@ s32 act_crouch_slide(struct MarioState *m) {
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
-                    m->arrowTimer = 15;
+                    m->arrowTimer = 12;
 
         }
     if (m->arrowTimer > 0) {

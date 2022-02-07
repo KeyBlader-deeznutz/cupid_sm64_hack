@@ -6093,7 +6093,7 @@ const BehaviorScript bhvMove[] = {
     SET_HOME(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_move_loop),
-        //CALL_NATIVE(move/collision_model),
+        CALL_NATIVE(load_object_collision_model),
         
     END_LOOP(),
 

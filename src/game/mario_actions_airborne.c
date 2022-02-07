@@ -111,11 +111,16 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
 }
 
 s32 check_kick_or_dive_in_air(struct MarioState *m) {
-    if (m->input & INPUT_B_PRESSED) {
-        struct Object *flameObj;
+    if ((m->input & INPUT_B_PRESSED) && m->arrowTimer == 0) {
+          struct Object *flameObj;
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
+                    m->arrowTimer = 12;
+
+        }
+    if (m->arrowTimer > 0) {
+        m->arrowTimer = m->arrowTimer - 1;
     }
     return FALSE;
 }

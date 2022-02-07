@@ -1,6 +1,6 @@
 void scroll_bob_dl_Plane_mesh_layer_1_vtx_1() {
 	int i = 0;
-	int count = 109;
+	int count = 112;
 	int width = 64 * 0x20;
 	int height = 64 * 0x20;
 
