@@ -515,7 +515,7 @@
 #define MODEL_AMP                         0xC2        // dAmpGeo
 #define MODEL_BOBOMB_BUDDY                0xC3        // bobomb_buddy_geo
 #define MODEL_Arrow                          0xEE        //arrow
-#define MODEL_Move                        0xEA
+#define MODEL_Move                        0xEA         // sports, its in the game
 
 // find me
 // find me

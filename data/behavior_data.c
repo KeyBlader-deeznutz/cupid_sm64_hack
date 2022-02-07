@@ -6088,8 +6088,8 @@ const BehaviorScript bhvIntroScene[] = {
     
 const BehaviorScript bhvMove[] = {
     BEGIN(OBJ_LIST_SURFACE),
-    OR_LONG(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_DONT_CALC_COLL_DIST)),
     LOAD_COLLISION_DATA(move_collision),
+    OR_LONG(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_DONT_CALC_COLL_DIST)),
     SET_HOME(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_move_loop),

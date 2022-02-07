@@ -48,11 +48,13 @@ s32 check_common_idle_cancels(struct MarioState *m) {
         return set_mario_action(m, ACT_WALKING, 0);
     }
 
+    // shoot arrow
     if (m->input & INPUT_B_PRESSED) {
         struct Object *flameObj;
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
+
 
     }
 

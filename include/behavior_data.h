@@ -540,5 +540,5 @@ extern const BehaviorScript bhvEndBirds1[];
 extern const BehaviorScript bhvEndBirds2[];
 extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
-extern const BehaviorScript bhvMove[];
+extern const BehaviorScript bhvMove[]; // this is gross but we'll see if it works
 #endif // BEHAVIOR_DATA_H
