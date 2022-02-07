@@ -27,16 +27,16 @@
 // #define NO_SLEEP
 
 // Disables fall damage
-#define NO_FALL_DAMAGE
+//#define NO_FALL_DAMAGE
 
 // Disables the scream that mario makes when falling off a great height (this is separate from actual fall damage)
 //#define NO_FALL_DAMAGE_SOUND
 
 // Fall height for normal fall damage. Vanilla is 1150.0f
-#define FALL_DAMAGE_HEIGHT_SMALL 1150.0f
+#define FALL_DAMAGE_HEIGHT_SMALL 500.0f
 
 // Fall height for double fall damage. Vanilla is 3000.0f
-#define FALL_DAMAGE_HEIGHT_LARGE 3000.0f
+#define FALL_DAMAGE_HEIGHT_LARGE 600.0f
 
 // Disables Mario getting stuck in snow and sand when falling
 // #define NO_GETTING_BURIED
@@ -72,7 +72,7 @@
 #define FIRSTY_LAST_FRAME 1
 
 // The maximum angle the player can wall kick, in degrees. 0..90. To allow 45 degree wall kicks, you must supply `46` to allow 45 and under.
-#define WALL_KICK_DEGREES 45
+#define WALL_KICK_DEGREES 0
 
 // This is vanilla behavior, disable to allow ledge grabbing on
 // any surface angle

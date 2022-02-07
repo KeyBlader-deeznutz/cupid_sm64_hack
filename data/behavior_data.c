@@ -3696,7 +3696,6 @@ const BehaviorScript bhvBobomb[] = {
     BEGIN(OBJ_LIST_DESTRUCTIVE),
     OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_HOLDABLE | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     LOAD_ANIMATIONS(oAnimations, bobomb_seg8_anims_0802396C),
-    DROP_TO_FLOOR(),
     ANIMATE(BOBOMB_ANIM_WALKING),
     SET_INT(oIntangibleTimer, 0),
     SET_HOME(),
@@ -3705,6 +3704,7 @@ const BehaviorScript bhvBobomb[] = {
         CALL_NATIVE(bhv_bobomb_loop),
     END_LOOP(),
 };
+
 
 const BehaviorScript bhvBobombFuseSmoke[] = {
     BEGIN(OBJ_LIST_UNIMPORTANT),
@@ -6084,6 +6084,19 @@ const BehaviorScript bhvIntroScene[] = {
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_intro_scene_loop),
     END_LOOP(),
+};
+    
+const BehaviorScript bhvMove[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_LONG(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_DONT_CALC_COLL_DIST)),
+    LOAD_COLLISION_DATA(move_collision),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_move_loop),
+        //CALL_NATIVE(move/collision_model),
+        
+    END_LOOP(),
+
 };
 
 

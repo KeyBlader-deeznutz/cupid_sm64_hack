@@ -24,7 +24,7 @@ void bhv_bouncing_fireball_flame_loop(void) {
 
             if (o->oMoveFlags
                 & (OBJ_MOVE_ON_GROUND | OBJ_MOVE_AT_WATER_SURFACE | OBJ_MOVE_UNDERWATER_ON_GROUND)
-                && o->oTimer > 100) {
+                && o->oTimer > 60) {
                 obj_mark_for_deletion(o);
             }
             break;
@@ -66,9 +66,9 @@ void bhv_bouncing_fireball_spawner_loop(void) {
 
         case 2:
             if (o->oTimer == 0) {
-                o->oBouncingFireBallSpawnerRandomCooldown = random_float() * 100.0f;
+                o->oBouncingFireBallSpawnerRandomCooldown = random_float() * 10.0f;
             }
-            if (o->oBouncingFireBallSpawnerRandomCooldown + 100 < o->oTimer) {
+            if (o->oBouncingFireBallSpawnerRandomCooldown + 10 < o->oTimer) {
                 o->oAction = 0;
             }
             break;

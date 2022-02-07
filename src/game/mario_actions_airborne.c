@@ -16,6 +16,7 @@
 #include "rumble_init.h"
 
 #include "config.h"
+#include "behavior_data.h"
 
 void play_flip_sounds(struct MarioState *m, s16 frame1, s16 frame2, s16 frame3) {
     s32 animFrame = m->marioObj->header.gfx.animInfo.animFrame;
@@ -111,7 +112,10 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
 
 s32 check_kick_or_dive_in_air(struct MarioState *m) {
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, m->forwardVel > 28.0f ? ACT_DIVE : ACT_JUMP_KICK, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
     }
     return FALSE;
 }
@@ -492,7 +496,11 @@ s32 act_triple_jump(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
+
     }
 
     if (m->input & INPUT_Z_PRESSED) {
@@ -531,7 +539,10 @@ s32 act_freefall(struct MarioState *m) {
     s32 animation = MARIO_ANIM_GENERAL_FALL;
 
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
     }
 
     if (m->input & INPUT_Z_PRESSED) {
@@ -560,7 +571,10 @@ s32 act_hold_jump(struct MarioState *m) {
     }
 
     if ((m->input & INPUT_B_PRESSED) && !(m->heldObj->oInteractionSubtype & INT_SUBTYPE_HOLDABLE_NPC)) {
-        return set_mario_action(m, ACT_AIR_THROW, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
     }
 
     if (m->input & INPUT_Z_PRESSED) {
@@ -586,7 +600,10 @@ s32 act_hold_freefall(struct MarioState *m) {
     }
 
     if ((m->input & INPUT_B_PRESSED) && !(m->heldObj->oInteractionSubtype & INT_SUBTYPE_HOLDABLE_NPC)) {
-        return set_mario_action(m, ACT_AIR_THROW, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
     }
 
     if (m->input & INPUT_Z_PRESSED) {
@@ -599,8 +616,11 @@ s32 act_hold_freefall(struct MarioState *m) {
 
 s32 act_side_flip(struct MarioState *m) {
     if (m->input & INPUT_B_PRESSED) {
-        m->marioObj->header.gfx.angle[1] += 0x8000;
-        return set_mario_action(m, ACT_DIVE, 0);
+         struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
+
     }
 
     if (m->input & INPUT_Z_PRESSED) {
@@ -623,7 +643,11 @@ s32 act_side_flip(struct MarioState *m) {
 
 s32 act_wall_kick_air(struct MarioState *m) {
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
+
     }
 
     if (m->input & INPUT_Z_PRESSED) {
@@ -893,7 +917,11 @@ s32 act_hold_water_jump(struct MarioState *m) {
 
 s32 act_steep_jump(struct MarioState *m) {
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
+
     }
 
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
@@ -1696,6 +1724,12 @@ s32 act_shot_from_cannon(struct MarioState *m) {
 s32 act_flying(struct MarioState *m) {
     s16 startPitch = m->faceAngle[0];
 
+#ifdef REONUCAM
+    if (gPlayer1Controller->buttonPressed & R_TRIG) {
+        gReonucamState.flyingCamOverride ^= 1;
+    }
+#endif
+
     if (m->input & INPUT_Z_PRESSED) {
         if (m->area->camera->mode == FLYING_CAMERA_MODE) {
             set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
@@ -1710,9 +1744,17 @@ s32 act_flying(struct MarioState *m) {
         return set_mario_action(m, ACT_FREEFALL, 0);
     }
 
+#ifdef REONUCAM
+    if (!gReonucamState.flyingCamOverride && m->area->camera->mode != FLYING_CAMERA_MODE) {
+        set_camera_mode(m->area->camera, FLYING_CAMERA_MODE, 1);
+    } else if (gReonucamState.flyingCamOverride && m->area->camera->mode != CAMERA_MODE_8_DIRECTIONS) {
+        set_camera_mode(m->area->camera, CAMERA_MODE_8_DIRECTIONS, 1);
+    }
+#else
     if (m->area->camera->mode != FLYING_CAMERA_MODE) {
         set_camera_mode(m->area->camera, FLYING_CAMERA_MODE, 1);
     }
+#endif
 
     if (m->actionState == ACT_STATE_FLYING_SPIN) {
         if (m->actionArg == ACT_ARG_FLYING_FROM_CANNON) {
@@ -1853,7 +1895,10 @@ s32 act_flying_triple_jump(struct MarioState *m) {
             set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
         }
         if (m->input & INPUT_B_PRESSED) {
-            return set_mario_action(m, ACT_DIVE, 0);
+        struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
         } else {
             return set_mario_action(m, ACT_GROUND_POUND, 0);
         }

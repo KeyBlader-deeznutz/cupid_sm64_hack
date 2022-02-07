@@ -13,8 +13,8 @@ static struct ObjectHitbox sBobombHitbox = {
 };
 
 void bhv_bobomb_init(void) {
-    o->oGravity = 2.5f;
-    o->oFriction = 0.8f;
+    o->oGravity  = 0.001f;
+    o->oFriction = 1.0f;
     o->oBuoyancy = 1.3f;
     o->oInteractionSubtype = INT_SUBTYPE_KICKABLE;
 }
@@ -28,17 +28,8 @@ void bobomb_spawn_coin(void) {
 }
 
 void bobomb_act_explode(void) {
-    if (o->oTimer < 5) {
-        cur_obj_scale(1.0f + ((f32) o->oTimer / 5.0f));
-    } else {
-        struct Object *explosion = spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
-        explosion->oGraphYOffset += 100.0f;
-
-        bobomb_spawn_coin();
-        create_respawner(MODEL_BLACK_BOBOMB, bhvBobomb, 3000);
-
         o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
-    }
+
 }
 
 void bobomb_check_interactions(void) {
@@ -200,12 +191,11 @@ void bobomb_dropped_loop(void) {
 void bobomb_thrown_loop(void) {
     cur_obj_enable_rendering();
 
-    o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
-    o->oHeldState = HELD_FREE;
-    o->oFlags &= ~OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW;
-    o->oForwardVel = 25.0f;
-    o->oVelY = 20.0f;
-    o->oAction = BOBOMB_ACT_LAUNCHED;
+    o->oHeldState  = 0;
+    o->oFlags     &= ~OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW; /* bit 3 */
+    o->oForwardVel = 65.0f;
+    o->oVelY       = 0.1f;
+    o->oAction     = BOBOMB_ACT_LAUNCHED;
 }
 
 void curr_obj_random_blink(s32 *blinkTimer) {
@@ -234,7 +224,9 @@ void curr_obj_random_blink(s32 *blinkTimer) {
 
 void bhv_bobomb_loop(void) {
     s8 dustPeriodMinus1;
-
+            if (o->oTimer > 30) {
+                obj_mark_for_deletion(o);
+            }
     if (is_point_within_radius_of_mario(o->oPosX, o->oPosY, o->oPosZ, 4000)) {
         switch (o->oHeldState) {
             case HELD_FREE:
@@ -252,6 +244,7 @@ void bhv_bobomb_loop(void) {
             case HELD_DROPPED:
                 bobomb_dropped_loop();
                 break;
+            
         }
 
         curr_obj_random_blink(&o->oBobombBlinkTimer);

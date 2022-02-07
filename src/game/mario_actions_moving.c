@@ -40,11 +40,11 @@ struct LandingAction     sBackflipLandAction = {         4,               0,    
 
 Mat4 sFloorAlignMatrix[2];
 
-s16 tilt_body_running(struct MarioState *m) {
-    s16 pitch = find_floor_slope(m, 0);
-    pitch = pitch * m->forwardVel / 40.0f;
-    return -pitch;
-}
+//s16 tilt_body_running(struct MarioState *m) {
+ //   s16 pitch = find_floor_slope(m, 0);
+ //   pitch = pitch * m->forwardVel / 40.0f;
+ //   return 0;
+//}
 
 void play_step_sound(struct MarioState *m, s16 frame1, s16 frame2) {
     if (is_anim_past_frame(m, frame1) || is_anim_past_frame(m, frame2)) {
@@ -485,18 +485,17 @@ s32 should_begin_sliding(struct MarioState *m) {
 
 s32 check_ground_dive_or_punch(struct MarioState *m) {
     if (m->input & INPUT_B_PRESSED) {
-        //! Speed kick (shoutouts to SimpleFlips)
-        if (m->forwardVel >= 29.0f && m->controller->stickMag > 48.0f) {
-            m->vel[1] = 20.0f;
-            return set_mario_action(m, ACT_DIVE, 1);
-        }
+         struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
 
-        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
+
+    
     }
 
     return FALSE;
 }
-
 s32 begin_braking_action(struct MarioState *m) {
     mario_drop_held_object(m);
 
@@ -590,7 +589,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                         animSpeed = (s32)(intendedSpeed / 4.0f * 0x10000);
                         set_mario_anim_with_accel(m, MARIO_ANIM_RUNNING, animSpeed);
                         play_step_sound(m, 9, 45);
-                        targetPitch = tilt_body_running(m);
+                     //  targetPitch = tilt_body_running(m);
 
                         inLoop = FALSE;
                     }
@@ -599,8 +598,8 @@ void anim_and_audio_for_walk(struct MarioState *m) {
         }
     }
 
-    marioObj->oMarioWalkingPitch = approach_s32_symmetric(marioObj->oMarioWalkingPitch, targetPitch, 0x800);
-    marioObj->header.gfx.angle[0] = marioObj->oMarioWalkingPitch;
+   // marioObj->oMarioWalkingPitch = approach_s32_symmetric(marioObj->oMarioWalkingPitch, targetPitch, 0x800);
+  //  marioObj->header.gfx.angle[0] = marioObj->oMarioWalkingPitch;
 }
 
 void anim_and_audio_for_hold_walk(struct MarioState *m) {
@@ -1042,7 +1041,10 @@ s32 act_braking(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
+          struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
     }
 
     switch (perform_ground_step(m)) {
@@ -1453,12 +1455,12 @@ s32 act_crouch_slide(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
-        if (m->forwardVel >= 10.0f) {
-            return set_mario_action(m, ACT_SLIDE_KICK, 0);
-        } else {
-            return set_mario_action(m, ACT_MOVE_PUNCHING, 0x9);
+          struct Object *flameObj;
+        flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
+            flameObj->oMoveAngleYaw = m->faceAngle[1];
+            flameObj->oHeldState = HELD_THROWN;
+            
         }
-    }
 
     if (m->input & INPUT_A_PRESSED) {
         return set_jumping_action(m, ACT_JUMP, 0);
