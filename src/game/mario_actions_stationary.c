@@ -49,13 +49,18 @@ s32 check_common_idle_cancels(struct MarioState *m) {
     }
 
     // shoot arrow
-    if (m->input & INPUT_B_PRESSED) {
+    if ((m->input & INPUT_B_PRESSED) && m->arrowTimer == 0) {
         struct Object *flameObj;
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
+        
+        m->arrowTimer = 15;
+    }
 
-
+    //kinda lazy, but gonna put our arrow cooldown counter here. Decrement by 1 each time. It works DONT QUESTION IT
+    if (m->arrowTimer > 0) {
+        m->arrowTimer = m->arrowTimer - 1;
     }
 
     if (m->input & INPUT_Z_DOWN) {

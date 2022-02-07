@@ -484,16 +484,17 @@ s32 should_begin_sliding(struct MarioState *m) {
 #define analog_stick_held_back(m) (abs_angle_diff((m)->intendedYaw, (m)->faceAngle[1]) > 0x471C)
 
 s32 check_ground_dive_or_punch(struct MarioState *m) {
-    if (m->input & INPUT_B_PRESSED) {
+    if ((m->input & INPUT_B_PRESSED) && m->arrowTimer == 0) {
          struct Object *flameObj;
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
 
-
-    
+        m->arrowTimer = 15;
     }
-
+    if (m->arrowTimer > 0) {
+        m->arrowTimer = m->arrowTimer - 1;
+    }
     return FALSE;
 }
 s32 begin_braking_action(struct MarioState *m) {
@@ -1040,13 +1041,17 @@ s32 act_braking(struct MarioState *m) {
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 
-    if (m->input & INPUT_B_PRESSED) {
+    if ((m->input & INPUT_B_PRESSED) && m->arrowTimer == 0) {
           struct Object *flameObj;
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
-    }
+                    m->arrowTimer = 15;
 
+    }
+    if (m->arrowTimer > 0) {
+        m->arrowTimer = m->arrowTimer - 1;
+    }
     switch (perform_ground_step(m)) {
         case GROUND_STEP_LEFT_GROUND:
             set_mario_action(m, ACT_FREEFALL, 0);
@@ -1454,13 +1459,17 @@ s32 act_crouch_slide(struct MarioState *m) {
         }
     }
 
-    if (m->input & INPUT_B_PRESSED) {
+    if ((m->input & INPUT_B_PRESSED) && m->arrowTimer == 0) {
           struct Object *flameObj;
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
-            
+                    m->arrowTimer = 15;
+
         }
+    if (m->arrowTimer > 0) {
+        m->arrowTimer = m->arrowTimer - 1;
+    }
 
     if (m->input & INPUT_A_PRESSED) {
         return set_jumping_action(m, ACT_JUMP, 0);
