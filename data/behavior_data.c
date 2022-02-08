@@ -6091,8 +6091,39 @@ const BehaviorScript bhvMove[] = {
     LOAD_COLLISION_DATA(move_collision),
     OR_LONG(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_DONT_CALC_COLL_DIST)),
     SET_HOME(),
+    SET_FLOAT(oDrawingDistance, 600000),
+
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_move_loop),
+        CALL_NATIVE(load_object_collision_model),
+        
+    END_LOOP(),
+
+};
+
+const BehaviorScript bhvMoveSide[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    LOAD_COLLISION_DATA(move_collision),
+    OR_LONG(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_DONT_CALC_COLL_DIST)),
+    SET_HOME(),
+    SET_FLOAT(oDrawingDistance, 600000),
+
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_moveside_loop),
+        CALL_NATIVE(load_object_collision_model),
+        
+    END_LOOP(),
+
+};
+
+const BehaviorScript bhvMoveSidey[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    LOAD_COLLISION_DATA(move_collision),
+    OR_LONG(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_DONT_CALC_COLL_DIST)),
+    SET_HOME(),
+    SET_FLOAT(oDrawingDistance, 600000),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_movesidey_loop),
         CALL_NATIVE(load_object_collision_model),
         
     END_LOOP(),

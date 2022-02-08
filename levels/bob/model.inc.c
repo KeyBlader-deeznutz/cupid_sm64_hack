@@ -5342,51 +5342,6 @@ Gfx bob_dl_Cube_016_mesh_layer_1_tri_0[] = {
 	gsSPEndDisplayList(),
 };
 
-Vtx bob_dl_Cube_017_mesh_layer_1_vtx_0[24] = {
-	{{{1224, -182, 291},0, {-8210, -1},{0x7F, 0x0, 0x0, 0xFF}}},
-	{{{1224, -182, -291},0, {-4117, -1},{0x7F, 0x0, 0x0, 0xFF}}},
-	{{{1224, 85, -291},0, {-4117, 2028},{0x7F, 0x0, 0x0, 0xFF}}},
-	{{{1224, 85, 291},0, {-8210, 2028},{0x7F, 0x0, 0x0, 0xFF}}},
-	{{{1224, -182, -291},0, {-26878, -1},{0x0, 0x0, 0x81, 0xFF}}},
-	{{{-1224, -182, -291},0, {-785, -1},{0x0, 0x0, 0x81, 0xFF}}},
-	{{{-1224, 85, -291},0, {-785, 2028},{0x0, 0x0, 0x81, 0xFF}}},
-	{{{1224, 85, -291},0, {-26878, 2028},{0x0, 0x0, 0x81, 0xFF}}},
-	{{{-1224, -182, -291},0, {-24, -1},{0x81, 0x0, 0x0, 0xFF}}},
-	{{{-1224, -182, 291},0, {4068, -1},{0x81, 0x0, 0x0, 0xFF}}},
-	{{{-1224, 85, 291},0, {4068, 2028},{0x81, 0x0, 0x0, 0xFF}}},
-	{{{-1224, 85, -291},0, {-24, 2028},{0x81, 0x0, 0x0, 0xFF}}},
-	{{{-1224, -182, 291},0, {2781, -1},{0x0, 0x0, 0x7F, 0xFF}}},
-	{{{1224, -182, 291},0, {28874, -1},{0x0, 0x0, 0x7F, 0xFF}}},
-	{{{1224, 85, 291},0, {28874, 2028},{0x0, 0x0, 0x7F, 0xFF}}},
-	{{{-1224, 85, 291},0, {2781, 2028},{0x0, 0x0, 0x7F, 0xFF}}},
-	{{{1224, -182, -291},0, {-24, -28019},{0x0, 0x81, 0x0, 0xFF}}},
-	{{{1224, -182, 291},0, {4068, -28019},{0x0, 0x81, 0x0, 0xFF}}},
-	{{{-1224, -182, 291},0, {4068, 4444},{0x0, 0x81, 0x0, 0xFF}}},
-	{{{-1224, -182, -291},0, {-24, 4444},{0x0, 0x81, 0x0, 0xFF}}},
-	{{{-1224, 85, -291},0, {-24, -2005},{0x0, 0x7F, 0x0, 0xFF}}},
-	{{{-1224, 85, 291},0, {4068, -2005},{0x0, 0x7F, 0x0, 0xFF}}},
-	{{{1224, 85, 291},0, {4068, 30458},{0x0, 0x7F, 0x0, 0xFF}}},
-	{{{1224, 85, -291},0, {-24, 30458},{0x0, 0x7F, 0x0, 0xFF}}},
-};
-
-Gfx bob_dl_Cube_017_mesh_layer_1_tri_0[] = {
-	gsSPVertex(bob_dl_Cube_017_mesh_layer_1_vtx_0 + 0, 16, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-	gsSP1Triangle(4, 5, 6, 0),
-	gsSP1Triangle(4, 6, 7, 0),
-	gsSP1Triangle(8, 9, 10, 0),
-	gsSP1Triangle(8, 10, 11, 0),
-	gsSP1Triangle(12, 13, 14, 0),
-	gsSP1Triangle(12, 14, 15, 0),
-	gsSPVertex(bob_dl_Cube_017_mesh_layer_1_vtx_0 + 16, 8, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-	gsSP1Triangle(4, 5, 6, 0),
-	gsSP1Triangle(4, 6, 7, 0),
-	gsSPEndDisplayList(),
-};
-
 Vtx bob_dl_Cube_018_mesh_layer_1_vtx_0[56] = {
 	{{{1224, -182, 291},0, {2414, 29690},{0x7F, 0x0, 0x0, 0xFF}}},
 	{{{1224, -182, -291},0, {1371, 25592},{0x7F, 0x0, 0x0, 0xFF}}},
@@ -9619,13 +9574,6 @@ Gfx bob_dl_Cube_015_mesh_layer_1[] = {
 Gfx bob_dl_Cube_016_mesh_layer_1[] = {
 	gsSPDisplayList(mat_bob_dl_f3d_material_004),
 	gsSPDisplayList(bob_dl_Cube_016_mesh_layer_1_tri_0),
-	gsSPDisplayList(mat_revert_bob_dl_f3d_material_004),
-	gsSPEndDisplayList(),
-};
-
-Gfx bob_dl_Cube_017_mesh_layer_1[] = {
-	gsSPDisplayList(mat_bob_dl_f3d_material_004),
-	gsSPDisplayList(bob_dl_Cube_017_mesh_layer_1_tri_0),
 	gsSPDisplayList(mat_revert_bob_dl_f3d_material_004),
 	gsSPEndDisplayList(),
 };

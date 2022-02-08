@@ -30,3 +30,4 @@
 
 #include "arrow/geo.inc.c"
 #include "move/geo.inc.c"
+#include "moveside/geo.inc.c"

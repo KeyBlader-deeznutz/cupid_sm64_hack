@@ -83,3 +83,5 @@ UNUSED static const u64 binid_18 = 18;
 #include "arrow/model.inc.c"
 #include "move/collision.inc.c"
 #include "move/model.inc.c"
+#include "moveside/model.inc.c"
+#include "moveside/collision.inc.c"
