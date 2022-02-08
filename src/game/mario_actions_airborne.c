@@ -116,7 +116,8 @@ s32 check_kick_or_dive_in_air(struct MarioState *m) {
         flameObj = spawn_object_relative(0,0,30,100,m->marioObj, MODEL_Arrow, bhvBobomb);   
             flameObj->oMoveAngleYaw = m->faceAngle[1];
             flameObj->oHeldState = HELD_THROWN;
-                    m->arrowTimer = 12;
+                    play_sound(SOUND_MARIO_IMA_TIRED, gGlobalSoundSource);
+                    m->arrowTimer = 14;
 
         }
     if (m->arrowTimer > 0) {
