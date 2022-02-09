@@ -18,6 +18,8 @@ extern void scroll_bitdw_dl_Cube_079_mesh_layer_1_vtx_0();
 extern void scroll_bitdw_dl_Cube_081_mesh_layer_1_vtx_0();
 extern void scroll_bitdw_dl_Cylinder_003_mesh_layer_1_vtx_0();
 extern void scroll_bitdw_dl_Cylinder_004_mesh_layer_1_vtx_0();
+extern void scroll_bitdw_dl_Cylinder_005_mesh_layer_1_vtx_0();
+extern void scroll_bitdw_dl_Cylinder_006_mesh_layer_1_vtx_0();
 extern void scroll_bitdw_dl_Sphere_mesh_layer_1_vtx_2();
 extern void scroll_bitdw_dl_Sphere_002_mesh_layer_1_vtx_1();
 extern void scroll_bitdw_dl_Sphere_003_mesh_layer_1_vtx_1();

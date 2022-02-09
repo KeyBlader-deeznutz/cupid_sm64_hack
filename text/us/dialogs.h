@@ -13,45 +13,45 @@
 #endif
 
 DEFINE_DIALOG(DIALOG_000, 1, 6, 30, 200, _("\
-Wow! You're smack in the\n\
-middle of the battlefield.\n\
-You'll find the Power\n\
-Stars that Bowser stole\n\
-inside the painting\n\
-worlds.\n\
-First, talk to the\n\
-Bob-omb Buddy. (Press [B]\n\
-to talk.) He'll certainly\n\
-help you out, and so will\n\
-his " COMRADES " in other\n\
-areas.\n\
-To read signs, stop, face\n\
-them and press [B]. Press [A]\n\
-or [B] to scroll ahead. You\n\
-can talk to some other\n\
-characters by facing them\n\
-and pressing [B]."))
+-Previously on Kid Dikarus\n\
+Bowser has sent MARIO to a\n\
+prison in the underworld!\n\
+Luckily MARIO was able\n\
+to find a bow powerup\n\
+and break out. Will\n\
+MARIO be able to escape\n\
+and RiSe to the occasion!\n\
+The Underworld is a tough\n\
+place but it's nothing\n\
+that will stop MARIO from\n\
+getting back to peach.\n\
+-If you really must\n\
+know there is no stars,\n\
+ground pounding or [B]\n\
+ariel movement.\n\
+All replaced by the bow.\n\
+"))
 
-DEFINE_DIALOG(DIALOG_001, 1, 4, 95, 200, _("\
-Watch out! If you wander\n\
-around here, you're liable\n\
-to be " PLASTERED " by a\n\
-water bomb!\n\
-Those enemy Bob-ombs love\n\
-to fight, and they're\n\
-always finding ways to\n\
-attack.\n\
-This meadow has become\n\
-a battlefield ever since\n\
-the Big Bob-omb got his\n\
-paws on the Power Star.\n\
-Can you recover the Star\n\
-for us? Cross the bridge\n\
-and go left up the path\n\
-to find the Big Bob-omb.\n\
-Please come back to see\n\
-me after you've retrieved\n\
-the Power Star!"))
+DEFINE_DIALOG(DIALOG_001, 1, 6, 95, 200, _("\
+This hack was ninty \n\
+precent done in the\n\
+last 3 days by insane\n\
+crunch...\n\
+Why I chose kid \n\
+icarus is because\n\
+when I wasn't sure\n\
+about what to do I\n\
+Was playing the 3D \n\
+Classics versions and\n\
+thought the backgrounds\n\
+looked really good.\n\
+Because of the crunch\n\
+I had to cut a lot out\n\
+but I guess it's true to\n\
+the source material\n\
+(The original game had\n\
+to cut a lot out due to\n\
+Deadline)"))
 
 DEFINE_DIALOG(DIALOG_002, 1, 4, 95, 200, _("\
 Hey, you! It's dangerous\n\
@@ -267,8 +267,8 @@ like being disturbed.\n\
 Please walk quietly."))
 
 DEFINE_DIALOG(DIALOG_019, 1, 2, 30, 200, _("\
-Shhh! Please walk\n\
-quietly in the hallway!"))
+What's so funny about\n\
+KIDDUS DICKARUS"))
 
 DEFINE_DIALOG(DIALOG_020, 1, 6, 95, 150, _("\
 Dear Mario:\n\
